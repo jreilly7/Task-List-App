@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskListApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header>
+    <h1> Task Lists App </h1>
+  </header>
+
+    <%= render "layouts/sidebar" %>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
+
+  <footer>
+    <p>
+      Task List Generator: Homework Assignment
+    </p>
+  </footer>
+</body>
+</html>
