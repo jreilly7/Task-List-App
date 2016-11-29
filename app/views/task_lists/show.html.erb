@@ -10,5 +10,12 @@
   <%= @task_list.description %>
 </p>
 
+<h2>Pending Tasks</h2>
+<ul>
+  <%@task_list.tasks.each do |task| %>
+  <li> <%=task.title%> last updated on <%=task.updated_at.strftime('%D')%></li>
+  <%end%>
+</ul>
+
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
 <%= link_to 'Back', task_lists_path %>

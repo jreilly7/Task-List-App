@@ -5,6 +5,11 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+
+#Adding index action for completed and pending tasks
+    @completed_tasks = Task.completed.limit(5)
+
+    @pending_tasks = Task.pending
   end
 
   # GET /tasks/1
