@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  get 'login' => 'login#index', as: :login
+  post 'login' => 'login#authenticate', as: :authenticate
+  get 'logout' => 'login#logout', as: :logout
+  get '/' => 'home#index', as: :home
+  root 'home#index'
+
+  resources :users
   resources :tasks
   resources :task_lists
   # The priority is based upon order of creation: first created -> highest priority.

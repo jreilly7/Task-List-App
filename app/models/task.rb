@@ -1,6 +1,8 @@
 class Task < ActiveRecord::Base
   belongs_to :task_list
 
+  belongs_to :user
+
   validates :title, :priority, :due_date, :task_list, presence:true
   validates :priority, numericality:true
   validates :priority, inclusion: {in: 1..10}
